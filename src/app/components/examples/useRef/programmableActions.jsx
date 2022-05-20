@@ -20,7 +20,7 @@ const ProgrammableActionsExample = () => {
           <label htmlFor="email" className='form-label'>Email</label>
           <input ref={inputRef} type="email" className='form-control' id='email'/>
           <button className='btn btn-primary' onClick={handleClick}>Фокус input</button>
-          <button className='btn btn-secondary' onClick={handleClickWidth}>Изменить ширину объекта</button>
+          <button className='m-2 btn btn-secondary' onClick={handleClickWidth}>Изменить ширину объекта</button>
         </CardWrapper>
     );
 };

@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import CollapseWrapper from "../common/collapse";
 const UseRefExercise = () => {
+  const [textInDiv, setTextInDiv] = useState("Блок");
+  const smallDiv = useRef();
+  const handleClick = () => {
+    smallDiv.current.style.width = "80px";
+    smallDiv.current.style.height = "150px";
+    setTextInDiv("text");
+  };
     return (
         <CollapseWrapper title="Упражнение">
             <p className="mt-3">
@@ -18,9 +25,11 @@ const UseRefExercise = () => {
                     width: 60,
                     color: "white"
                 }}
+                ref={smallDiv}
             >
-                <small>Блок</small>
+                <small >{textInDiv}</small>
             </div>
+           <button className='mt-2 btn btn-secondary' onClick={handleClick}>Изменить Блок</button>
         </CollapseWrapper>
     );
 };
