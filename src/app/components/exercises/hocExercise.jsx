@@ -1,5 +1,6 @@
 import React from "react";
 import CollapseWrapper from "../common/collapse";
+import WithFunctions from "../examples/hoc/withFunctions";
 
 const HocExercise = () => {
     return (
@@ -55,6 +56,7 @@ const HocExercise = () => {
                     <code>localStorage</code>
                 </li>
             </ul>
+            <WithFunctions/>
         </CollapseWrapper>
     );
 };
