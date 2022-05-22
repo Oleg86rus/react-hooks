@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const SimpleComponent = ({ onLogin, onLogOut, isAuth }) => {
   const buttonValue = () => {
     if (!isAuth) return "Войти";
-    if (isAuth) return "Выйти из системы";
+    return "Выйти из системы";
   };
   const handleClick = () => {
     if (!isAuth) {
