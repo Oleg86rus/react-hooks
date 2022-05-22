@@ -30,6 +30,10 @@ const HOCExample = () => {
                 <SmallTitle>4. Composed HOC</SmallTitle>
                 <NewComponent/>
             </CardWrapper>
+            <CardWrapper>
+              <SmallTitle>5. HW</SmallTitle>
+              <NewComponent/>
+            </CardWrapper>
         </>
     );
 };
