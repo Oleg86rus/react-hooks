@@ -1,28 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import CardWrapper from "../../common/Card";
-import SimpleComponent from "./simpleComponent";
 import SmallTitle from "../../common/typografy/smallTitle";
 
-const WithFunctions = () => {
-  const [Auth, setAuth] = useState(false);
+const WithFunctions = (Component) => (props) => {
   const onLogin = () => {
-    setAuth(!Auth);
-    localStorage.setItem("isAuth", "true");
-    localStorage.setItem("user", "LogIn");
+    localStorage.setItem("user", "token");
   };
   const onLogOut = () => {
-    setAuth(!Auth);
-    localStorage.setItem("isAuth", "false");
     localStorage.removeItem("user");
   };
-
+  const isAuth = !!localStorage.getItem("user");
   return (
-    <>
     <CardWrapper>
       <SmallTitle>HOC</SmallTitle>
-      <SimpleComponent onLogOut={onLogOut} onLogin={onLogin} isAuth={Auth}/>
+      <Component onLogOut={onLogOut} onLogin={onLogin} isAuth={isAuth} {...props}/>
     </CardWrapper>
-    </>
   );
 };
 export default WithFunctions;
