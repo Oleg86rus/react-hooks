@@ -1,12 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import CollapseWrapper from "../common/collapse";
 const UseRefExercise = () => {
-  const [textInDiv, setTextInDiv] = useState("Блок");
   const smallDiv = useRef();
   const handleClick = () => {
     smallDiv.current.style.width = "80px";
     smallDiv.current.style.height = "150px";
-    setTextInDiv("text");
+    smallDiv.current.lastChild.innerText = "text";
   };
     return (
         <CollapseWrapper title="Упражнение">
@@ -27,7 +26,7 @@ const UseRefExercise = () => {
                 }}
                 ref={smallDiv}
             >
-                <small >{textInDiv}</small>
+                <small >Блок</small>
             </div>
            <button className='mt-2 btn btn-secondary' onClick={handleClick}>Изменить Блок</button>
         </CollapseWrapper>
